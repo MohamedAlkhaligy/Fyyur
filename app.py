@@ -159,7 +159,6 @@ def show_venue(venue_id):
         "artist_image_link": show.Artist.image_link,
         "start_time": show.Show.start_time.strftime('%Y-%m-%d %H:%M:%S')
     }
-    print(show.Show.start_time)
     if (show.Show.start_time < datetime.now()):
       past_shows.append(info)
     else:
@@ -357,7 +356,7 @@ def edit_venue(venue_id):
   form = VenueForm()
   
   # TODO: populate form with values from venue with ID <venue_id>
-  venue_info - Venue.query.get(venue_id)
+  venue_info = Venue.query.get(venue_id)
   venue={
     "id": venue_info.id,
     "name": venue_info.name,
